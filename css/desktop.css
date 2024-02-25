@@ -1,0 +1,156 @@
+canvas {
+    margin: 20px auto;
+    width: 100%;
+    display: block;
+    box-shadow: 0 0 0 12px #7D868A,  0 5px 38px 0 rgba(116,116,116,0.50);
+    border-radius: 10px;
+}
+.toolbar {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    background: rgba(236, 236, 236, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 450px) {
+    .toolbar {
+        flex-direction: column;
+    }
+}
+.toolbar > * {
+    display: flex;
+    align-items: center;
+}
+.room {
+    font-family: sans-serif;
+    font-size: 24px;
+}
+.room >span {
+    font-weight: bold;
+    letter-spacing: 0.3em;
+}
+button, a.button {
+    background: white;
+    padding: 0.4em 0.7em;
+    font-size: 14px;
+    color: gray;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: solid gray 2px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+button:hover, a:hover {
+    border: solid orange 2px;
+    color: orange;
+}
+a#vr-button {
+    display: inline-block;
+    background: white;
+    padding: 0.4em 0.7em;
+    font-size: 18px;
+    color: gray;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: solid gray 4px;
+    border-radius: 10px;
+    text-align: center;
+}
+a#vr-button:hover {
+    border: solid orange 4px;
+    color: orange;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.overlay {
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2em;
+    font-family: sans-serif;
+}
+.overlay-inner {
+    background: white;
+    padding: 3em 3em 2em 3em;
+    border-radius: 20px;
+    max-width: 800px;
+    box-sizing: border-box;
+    max-height: calc(100% - 2em);
+    overflow: auto;
+    margin: auto;
+}
+.overlay-inner h1 {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+.overlay-inner p {
+    line-height: 25px;
+}
+.sponsor-icons {
+    display: flex;
+    align-items: center;
+}
+.sponsor-icons > div {
+    margin-right: 10px;
+}
+.overlay-inner .start {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.overlay-inner .start button {
+    font-size: 18px;
+    background: rgb(3, 181, 148);
+    color: white;
+    border: 0;
+    padding: 1em 2em;
+}
+.overlay-inner .start button:hover {
+    background: rgb(5, 124, 102);
+}
+
+@media only screen and (max-width: 600px) {
+    .overlay {
+        padding: 1em;
+    }
+    .overlay-inner {
+        padding: 2em 2em 1em 2em;
+    }
+    .overlay-inner h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .overlay-inner p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .sponsor-icons {
+        flex-direction: column;
+    }
+    .sponsor-icons > div {
+        margin-bottom: 10px;
+    }
+    .overlay-inner .start {
+        justify-content: center;
+    }
+}
+
+.hidden {
+    display: none;
+}
