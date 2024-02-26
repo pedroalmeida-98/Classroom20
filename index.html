@@ -19,6 +19,7 @@
     <script src="./components/size-bigger.component.js"></script>
     <script src="./components/size-smaller.component.js"></script>
     <script type="module" src="./components/texture-painter.component.js"></script>
+
   </head>
   <body>
     <a-scene>
@@ -47,6 +48,9 @@
         <a-box class="hittable" color-picker="color: #EECE54" position="0.2 0.5 -0.52" scale=".1 .1 .1"></a-box>
         <a-box class="hittable" color-picker="color: #ED5564" position="0.4 0.5 -0.52" scale=".1 .1 .1"></a-box>
         <a-box class="hittable" color-picker="color: #FFFFFF" position="0.6 0.5 -0.52" scale=".1 .1 .1"></a-box>
+
+        <a-plane material="src: img\Brasao-ufal.png;" rotation="0 0 0" position="-1 0.45 -0.52" scale=".15 .15 .15" tranparent="true"></a-plane> <!-- logo UFAL -->
+        <a-plane material="src: img\logo-ic.png;" rotation="0 0 0"     position="-1.19 0.45 -0.52" scale=".15 .15 .15" tranparent="true"></a-plane> <!-- logo IC -->
         
         <a-text value="Eraser" color="black" position="0.8 1.85 -0.52" width="1.2"></a-text>
         <a-box class="hittable" eraser-picker material="color: pink; roughness: 0.7; metalness: 0.1" position="0.9 1.7 -0.52" scale="0.1 0.1 0.1"></a-box>
