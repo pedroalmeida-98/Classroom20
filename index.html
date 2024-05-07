@@ -13,6 +13,7 @@
     </script>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="./components/color-picker.component.js"></script>
+    <script src="./components/color-black.component.js"></script>
     <script src="./components/erase-all.component.js"></script>
     <script src="./components/eraser-picker.component.js"></script>
     <script src="./components/intersection-visual.component.js"></script>
@@ -41,14 +42,14 @@
             <a-text value="+" color="black" position="-0.0345 0.0 0.05" width="2"></a-text>
         </a-sphere> 
 
-         <a-box class="hittable" color-picker="color: black" position="-0.6 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Black -->
-        <a-box class="hittable" color-picker="color: #AC92EB" position="-0.4 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Blue --> <!-- Roxo -->
-        <a-box class="hittable" color-picker="color: #4FC1E8" position="-0.2 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Light Blue -->
-        <a-box class="hittable" color-picker="color: #A0D568" position="0 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Green -->
-        <a-box class="hittable" color-picker="color: #EECE54" position="0.2 0.5 -0.52" scale=".1 .1 .1"></a-box>  <!-- Yellow -->
-        <a-box class="hittable" color-picker="color: #ED5564" position="0.4 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Red -->
+         <!-- Cores antigas
+         <a-box class="hittable" color-picker="color: black" position="-0.6 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Black 
+        <a-box class="hittable" color-picker="color: #AC92EB" position="-0.4 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Blue --> <!-- Roxo 
+        <a-box class="hittable" color-picker="color: #4FC1E8" position="-0.2 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Light Blue 
+        <a-box class="hittable" color-picker="color: #A0D568" position="0 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Green 
+        <a-box class="hittable" color-picker="color: #EECE54" position="0.2 0.5 -0.52" scale=".1 .1 .1"></a-box>  <!-- Yellow 
+        <a-box class="hittable" color-picker="color: #ED5564" position="0.4 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- Red 
         <a-box class="hittable" color-picker="color: #c0c0c0" position="0.6 0.5 -0.52" scale=".1 .1 .1"></a-box> <!-- White -->
-
 
         <!-- IMG  -->
         <a-plane material="src: img\Brasao-ufal.png;" rotation="0 0 0" position="-1.13 1.7 -0.52" scale=".15 .15 .15" transparent="true"></a-plane> <!-- logo UFAL -->
@@ -72,8 +73,14 @@
 
       <a-entity camera wasd-controls look-controls="enabled: true" position="0 1.3 0.1"></a-entity>
 
-      <a-entity class="controller" laser-controls="hand: left" raycaster="objects: .hittable; far: 3" line="color: #000000"></a-entity>
-      <a-entity class="controller" laser-controls="hand: right" raycaster="objects: .hittable; far: 3" line="color: #000000"></a-entity>
+      <a-entity class="controller" id = "left" laser-controls="hand: left" raycaster="objects: .hittable; far: 3" line="color: #000000">
+        <a-circle class="hittable" id="color-wheel" position="-0.5 0 -0.2" rotation="0 0 0" radius = "0.3" color-picker></a-circle>
+        <a-box id = "colorSelected" position="-0.15 0.3 -0.2" width = "0.1" height = "0.1" depth = "0.1" color = "black"></a-box>
+        <a-text id = "textColor" value="Color selected:" color="#660000" position="-0.3 0.4 -0.2" width="1"></a-text>
+        <a-circle color-black id = "black" class = "hittable" color = "black" position = "-1 0 -0.2" radius = "0.1"></a-circle> 
+      </a-entity>
+      <a-entity class="controller" id = "right" laser-controls="hand: right" raycaster="objects: .hittable; far: 3" line="color: #000000"></a-entity>
+      
     </a-scene>
   </body>
 </html>
